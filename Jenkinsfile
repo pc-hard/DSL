@@ -1,19 +1,22 @@
-    node {
 
-    stage ‘Checkout’
+pipeline {
+    agent any
 
-    // Checkout logic goes here
-
-    stage ‘Build’
-
-    // Build logic goes here
-
-    stage ‘Test’
-
-    // Test logic goes here
-
-    stage ‘Deploy’
-
-    // Deploy logic goes here
-
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
     }
+}
