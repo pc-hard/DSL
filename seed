@@ -17,7 +17,7 @@ def pathWorkspace = "/var/lib/jenkins/workspace/${folderName}"
 job("${folderName}/cloneFromGit") {
     logRotator(-1, 10)
     scm {
-        github('kv020devops/jenkins', 'master')
+        github('pingwin4ik/dsl', 'master')
     }
     triggers {
        // githubPush()
@@ -33,7 +33,7 @@ job("${folderName}/cloneFromGit") {
 job("${folderName}/createBuldTestJobs") {
     logRotator(-1, 10)
     scm {
-        github('kv020devops/test_jenkins1', 'master')
+        github('pingwin4ik/dsl', 'master')
     }
     triggers {
         // githubPush()
@@ -42,14 +42,14 @@ job("${folderName}/createBuldTestJobs") {
     steps {
 
         dsl {
-            external "${folderName}/jobs/createBuldTestJobs.groovy"
+            external "${folderName}/jobs"
         }
     }
 }
 pipelineJob("${folderName}/${folderName}-pipeline") {
     definition {
         cps {
-            script(readFileFromWorkspace("/var/lib/jenkins/workspace/project_test/createBuldTestJobs/project_test/pipeline/first.groovy"))
+            script(readFileFromWorkspace("/var/lib/jenkins/workspace/project_test/createBuldTestJobs/project_test/pipeline/pipeline"))
             sandbox()
         }
     }
