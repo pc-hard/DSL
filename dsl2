@@ -1,18 +1,23 @@
 pipeline {
     agent none
     stages {
-        stage('say hi') {
+        stage('checkout HELLO PY ?') {
             steps {
                 echo "I don't need no node"
             }
         }
-        stage('build') {
+        stage('test') {
              agent {
                  label 'master'
              }
              steps {   
                 
                 sh 'echo from master'
+                 definition {
+        cps {
+            script(readFileFromWorkspace('test2'))
+    	    sandbox()
+}
             }
         }
         stage('deploy') {
