@@ -12,5 +12,13 @@ pipeline {
     	  }
             }
         }
+     stage('build') {
+             agent {
+                 label 'master'
+             }
+             steps {   
+                checkout scm
+                sh 'echo from master'
+            }
    
 }
