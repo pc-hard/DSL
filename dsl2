@@ -13,10 +13,8 @@ pipeline {
              steps {   
                 
                 sh 'echo from master'
-                 definition {
-        cps {
-            script(readFileFromWorkspace('test2'))
-    	    sandbox()
+groovyCommand (readFileFromWorkspace('test2'))
+    	    
 }
             }
         }
