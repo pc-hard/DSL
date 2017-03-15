@@ -1,3 +1,4 @@
+def releaseScript = readFileFromWorkspace('test2')
 pipeline {
     agent none
     stages {
@@ -11,10 +12,8 @@ pipeline {
                  label 'master'
              }
              steps {   
-        sh 'echo from master'
-groovyCommand (readFileFromWorkspace('test2'))
-    	  
-}
+        groovyCommand(releaseScript)
+    	  }
             }
         }
         stage('deploy') {
