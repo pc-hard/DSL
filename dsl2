@@ -29,4 +29,3 @@ groovyCommand (readFileFromWorkspace('test2'))
         }
     }
 }
-}
