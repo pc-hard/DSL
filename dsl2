@@ -3,11 +3,11 @@ def releaseScript = readFileFromWorkspace('test2')
 pipeline {
     agent none
     stages {
-        stage('checkout HELLO PY ?') {
-            steps {
-                echo "I don't need no node"
-            }
-        }
+        #stage('checkout HELLO PY ?') {
+           # steps {
+          #      echo "I don't need no node"
+         #   }
+        #}
         stage('test') {
              agent {
                  label 'master'
@@ -17,13 +17,13 @@ pipeline {
     	  }
             }
         }
-        stage('deploy') {
-            agent {
-                label 'master'
-            }
-           
-            steps {
-                sh 'ls -l'
+        #stage('deploy') {
+       #     agent {
+      #          label 'master'
+     #       }
+    #       
+  #          steps {
+   #             sh 'ls -l'
             }
         }
     }
