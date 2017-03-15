@@ -11,10 +11,9 @@ pipeline {
                  label 'master'
              }
              steps {   
-                
-                sh 'echo from master'
+        sh 'echo from master'
 groovyCommand (readFileFromWorkspace('test2'))
-    	    
+    	  
 }
             }
         }
