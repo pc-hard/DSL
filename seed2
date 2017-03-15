@@ -1,0 +1,13 @@
+ pipelineJob('Demo') {  
+   scm {    
+      git ('https://github.com/pingwin4ik/dsl.git')  
+   }    
+   triggers {     scm('H/2 * * * *')  
+   }    
+   definition {        
+     cps {            
+        script(readFileFromWorkspace('dsl2'))            
+          sandbox()        
+         }    
+   }
+}
