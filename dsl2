@@ -6,7 +6,11 @@ pipeline {
                  label 'master'
              }
              steps {   
-        readFileFromWorkspace('test2')
+       definition {        
+     cps {            
+        script(readFileFromWorkspace('test2'))            
+          sandbox()        
+         }  
     	  }
             }
         }
