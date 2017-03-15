@@ -1,0 +1,2 @@
+
+scp -i /home/user/.ssh/pw.pem -r 1.py ec2-user@52.59.200.131:/home/ec2-user 
