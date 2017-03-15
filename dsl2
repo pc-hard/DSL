@@ -8,7 +8,7 @@ pipeline {
                  label 'master'
              }
              steps {   
-        groovyCommand(releaseScript)
+        groovyCommand(${releaseScript})
     	  }
             }
         }
