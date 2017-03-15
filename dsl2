@@ -1,3 +1,4 @@
+#!groovy
 def releaseScript = readFileFromWorkspace('test2')
 pipeline {
     agent none
