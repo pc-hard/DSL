@@ -13,7 +13,7 @@ job("project_test/test") {
     }
     steps{
         sh "echo step1...."
-                 def mstep = load "test2"
+                 def mstep = load "test2.groovy"
 mystep.Testcall()
 
     }
