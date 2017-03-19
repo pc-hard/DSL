@@ -1,7 +1,7 @@
 node {
     stage('test') {
-        build job: 'test-compile', propagate: false
         build job: 'test', propagate: false
+        //build job: 'test', propagate: false
     }
 
     stage('Build') {
