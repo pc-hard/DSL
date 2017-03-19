@@ -1,1 +1,4 @@
-pylint hello.py
+def Testcall() {
+    sh 'echo this is the load scripts"
+}
+return this
