@@ -12,7 +12,8 @@ job("project_test/test") {
         scm('H/2 * * * *')
     }
     steps{
-        shell "pypline /var/lib/jenkins/workspace/project_test/cloneFromGit/mysite/HelloWorldApp/views.py || exit 0"
+        load 'test2'
+
     }
 
 }
@@ -36,7 +37,7 @@ job("project_test/deploy") {
         scm('H/2 * * * *')
     }
     steps{
-        shell "echo 'deploy code'"
+        load 'deploy2'
     }
 
 }
