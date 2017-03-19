@@ -12,7 +12,7 @@ job("project_test/test") {
         scm('H/2 * * * *')
     }
     steps{
-        load 'test2'
+        load './test2'
 
     }
 
