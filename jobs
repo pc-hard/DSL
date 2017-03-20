@@ -37,7 +37,7 @@ job("project_test/deploy") {
         scm('H/2 * * * *')
     }
     steps{
-        load 'deploy2'
+        shell(readFileFromWorkspace('deploy2'))
     }
 
 }
