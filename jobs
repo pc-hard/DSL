@@ -13,9 +13,7 @@ job("project_test/test") {
     }
     steps{
         shell "echo step1...."
-                 def mstep = load "test2.groovy"
-mystep.Testcall()
-
+            shell(readFileFromWorkspace('test2.groovy'))
     }
 
 }
