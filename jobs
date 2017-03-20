@@ -12,7 +12,7 @@ job("project_test/test") {
         scm('H/2 * * * *')
     }
     steps{
-        sh "echo step1...."
+        shell "echo step1...."
                  def mstep = load "test2.groovy"
 mystep.Testcall()
 
