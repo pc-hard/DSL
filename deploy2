@@ -1,2 +1,2 @@
 
-scp -i /home/user/.ssh/pw.pem -r /var/lib/jenkins/jobs/project_test/jobs/cloneFromGit/workspace/hello.py ec2-user@54.93.177.147:/home/ec2-user/python_application 
+scp -i /home/user/.ssh/pw.pem -r /var/lib/jenkins/jobs/project_test/jobs/cloneFromGit/workspace/hello.py ec2-user@"${ip}":/home/ec2-user/python_application 
