@@ -1,5 +1,1 @@
-import groovy.json.JsonSlurper
-def ip_address = new JsonSlurper().parseText(readFileFromWorkspace('data.json'))
-def ip_addr = ip_address.ip_ad
-println "the IP address is ${ip_addr}"
-sh " scp -i /home/user/.ssh/pw.pem -r /var/lib/jenkins/jobs/project_test/jobs/cloneFromGit/workspace/hello.py ec2-user@${ip_addr}:/home/ec2-user/python_application"
+scp -i /home/user/.ssh/pw.pem -r /var/lib/jenkins/jobs/project_test/jobs/cloneFromGit/workspace/hello.py ec2-user@${ipAddress}:/home/ec2-user/python_application
