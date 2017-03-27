@@ -36,8 +36,11 @@ job("project_test/deploy") {
         // githubPush()
         scm('H/2 * * * *')
     }
+    
     steps{
         shell(readFileFromWorkspace('deploy2'))
     }
-
+parameters {
+                                stringParam("$ip_address", "$ip_ad")
+                                        }
 }
