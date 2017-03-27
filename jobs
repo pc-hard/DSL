@@ -41,6 +41,6 @@ job("project_test/deploy") {
         shell(readFileFromWorkspace('deploy2'))
     }
 parameters {
-                                stringParam("$ip_address", "$ip_ad")
+                                stringParam("$ip_address.ip_ad", "$ip_ad")
                                         }
 }
