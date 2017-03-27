@@ -2,6 +2,10 @@
 import groovy.io.FileType
 import hudson.FilePath
 import hudson.*
+import groovy.json.JsonSlurper
+
+def ip_address = new JsonSlurper().parseText(readFileFromWorkspace('data.json'))
+def ip_addr = ip_address.ip_ad
 
 
 job("project_test/test") {
@@ -41,6 +45,6 @@ job("project_test/deploy") {
         shell(readFileFromWorkspace('deploy2'))
     }
 parameters {
-                                stringParam("$ip_address.ip_ad", "$ip_ad")
+                                stringParam("ipAddress", "$ip_addr")
                                         }
 }
