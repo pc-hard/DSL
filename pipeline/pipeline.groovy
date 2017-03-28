@@ -14,8 +14,8 @@ node {
     stage('deploy') {
         build job: 'deploy', propagate: false
     }
-    {
+    
         step ([$class: 'CopyArtifact', projectName: 'test', filter: '*.py'])
-    }
+    
 
 }
