@@ -1,7 +1,7 @@
 node {
     stage('test') {
         build job: 'test', propagate: false
-        //build job: 'test', propagate: false
+     archiveArtifacts artifacts: '*.py', excludes: null   
     }
 
     stage('Build') {
