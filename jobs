@@ -16,8 +16,7 @@ job("project_test/test") {
         scm('H/2 * * * *')
     }
     steps{
-        shell "echo step1...."
-            shell(readFileFromWorkspace('test2.groovy'))
+                    shell(readFileFromWorkspace('test2.groovy'))
     }
 
 }
