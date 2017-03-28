@@ -1,1 +1,1 @@
-pylint '$WORKSPACE/hello.py' || exit 0
+pylint $WORKSPACE/hello.py || exit 0
