@@ -18,6 +18,9 @@ job("project_test/test") {
     steps{
                     shell(readFileFromWorkspace('test2.groovy'))
     }
+     publishers {
+        archiveArtifacts('*.py')
+    }
 
 }
 job("project_test/build") {
@@ -30,9 +33,7 @@ job("project_test/build") {
     steps{
         shell "echo 'buils code'"
     }
- publishers {
-        archiveArtifacts('*.py')
-    }
+
 }
 job("project_test/deploy") {
     logRotator(-1, 10)
