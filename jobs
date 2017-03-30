@@ -30,7 +30,9 @@ job("project_test/build") {
     steps{
         shell "echo 'buils code'"
     }
-
+ publishers {
+        archiveArtifacts('*.py')
+    }
 }
 job("project_test/deploy") {
     logRotator(-1, 10)
